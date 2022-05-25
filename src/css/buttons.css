@@ -1,0 +1,26 @@
+button {
+    border: none;
+    color: white;
+    padding: 18px 38px;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+[data-start] {
+    background: rgb(143, 188, 143, 0.8);
+}
+
+[data-stop] {
+    background: rgb(233, 150, 122, 0.8);
+}
+
+[data-reset] {
+    background: rgb(184, 134, 11, 0.8);
+}
+
+[disabled] {
+    color: transparent;
+    background: rgba(255,255,255,0.05);
+}
