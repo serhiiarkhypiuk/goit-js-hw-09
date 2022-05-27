@@ -48,11 +48,11 @@ const options = {
   onClose(selectedDates) {
     selectedDates.forEach(element => {
       if (element <= today) {
-        Notiflix.Notify.warning("Please choose a date in the future")
+        Notiflix.Notify.warning("Choose a date in the future 😔")
       }
       
       if (element > today) {
-        Notiflix.Notify.success("Date selected correctly :)")
+        Notiflix.Notify.success("Date selected correctly 🙂")  
         button.disabled = false
       }
     })
