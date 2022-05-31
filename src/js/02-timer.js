@@ -47,21 +47,26 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     selectedDates.forEach(element => {
+      intervalId: null
+      isActive: false
+      
       if (element <= today) {
         Notiflix.Notify.warning("Choose a date in the future 😔")
+        return
       }
       
       if (element > today) {
-        Notiflix.Notify.success("Date selected correctly 🙂")  
+        Notiflix.Notify.success("Date selected correctly 🙂")
+        button.addEventListener('click', countdown)
+
         button.disabled = false
+
       }
     })
-    console.log(selectedDates[0])
-    
-    intervalId: null
-    isActive: false
 
-    const countdown = () => {  
+    console.log(selectedDates[0])
+
+    function countdown() {  
       if (this.isActive === true) {
         return
       }
@@ -97,8 +102,6 @@ const options = {
         console.log(timeLeftMS)
       }, 1000)
     }
-
-    button.addEventListener('click', countdown)
   }
 }
 
