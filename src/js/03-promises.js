@@ -16,9 +16,13 @@ const handleSubmit = (event) => {
   let firstDelay = event.currentTarget.elements.delay.value
   let amount = event.currentTarget.elements.amount.value
   let delayStep = event.currentTarget.elements.step.value
+  let totalDelay
   
   for (let i = 1; i <= amount; i += 1) {
-    let totalDelay = (Number(firstDelay) + Number(delayStep * i))
+    totalDelay = firstDelay
+    if (i >= 2) {
+      totalDelay = Number(firstDelay) + Number(delayStep * (i - 1))
+    } 
 
     createPromise(i, totalDelay)
       .then(resolved)
